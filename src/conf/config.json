@@ -1,0 +1,20 @@
+{
+  "APP_PORT": "1323",
+
+  "DRIVER":"postgres",
+  "USER":"postgres",
+  "PASSWORD":"postgres",
+  "DB":"story_",
+  "HOST":"localhost",
+  "STAGINGHOST":"db",
+  "PORT":"5400",
+  "STAGINGPORT":"5432",
+
+  "KEYPATH":"./keys/",
+  "PRIVATE_KEY":"private-key.pem",
+  "PUBLIC_KEY":"public-key.pem",
+  "SIGN_METHOD":"RS256",
+
+  "SSL_KEY":"",
+  "SSL_CERT":""
+}

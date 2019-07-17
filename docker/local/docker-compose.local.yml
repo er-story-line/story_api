@@ -1,0 +1,26 @@
+version: '3.1'
+
+services:
+  db:
+    image: story_postgres-local
+    container_name: story_db-local
+    build:
+      context: ../../
+      dockerfile: ./docker/local/postgres.Dockerfile
+    restart: always
+    ports:
+      - "5400:5432"
+    environment:
+      POSTGRES_PASSWORD: postgres
+      POSTGRES_DB: ${INSTANCE_DB}
+      DEV_ENV: ${DEV_ENV}
+      INSTANCE_DB: ${INSTANCE_DB}
+      DB_HOST: ${DB_HOST}
+      DB_PORT: ${DB_PORT}
+      DB_USERNAME: ${DB_USERNAME}
+      PGPASSFILE: /sql/.pgpass
+    volumes:
+      - ../../sql/functions:/sql/functions
+      - ../../sql/tables:/sql/tables
+      - ../../sql/views:/sql/views
+      - ../../sql/runsql.sh:/sql/runsql.sh
